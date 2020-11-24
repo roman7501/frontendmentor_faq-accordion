@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+  color: hsl(237, 12%, 33%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+}
+
+.card {
+  max-width: 1000px;
+  margin: 0 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Left side */
+
+.card-left {
+  position: relative;
+}
+
+.container-img {
+  position: relative;
+  height: 100%;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.img-woman {
+  transform: translateX(-60px);
+}
+
+.img-bg,
+.img-box {
+  position: absolute;
+}
+
+.img-box {
+  top: 40%;
+  left: -20%;
+  z-index: 2;
+}
+
+/* Right Side */
+
+.card-right {
+  padding: 50px;
+  font-size: 12px;
+  color: hsl(240, 6%, 50%);
+}
+
+.card-right .card-title {
+  font-size: 20px;
+  margin: 30px 0;
+  color: #000;
+}
+
+.card-right .card-question {
+  border-bottom: hsl(240, 5%, 91%) 1px solid;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-right .card-question h2 {
+  font-weight: 400;
+  margin: 20px 0;
+  padding-right: 20px;
+}
+
+.card-right .card-question h2:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.card-questions .arrow {
+  width: 5%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.card-questions .card-answer {
+  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-questions .show .card-answer {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  animation: answer;
+  animation-duration: 0.5s;
+}
+
+@keyframes answer {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-questions .show h2 {
+  color: #000;
+}
+
+.card-questions .show .arrow {
+  transition: transform 0.5s ease-in-out;
+  transform: rotateZ(180deg);
+}
+
+@media (max-width: 750px) {
+  .card {
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+  /* Left Side */
+  img {
+    width: 50%;
+  }
+
+  .container-img {
+    margin: 0 auto;
+    overflow: unset;
+    transform: translateY(-50px);
+  }
+
+  .img-woman {
+    transform: translateX(25%);
+  }
+
+  .img-bg,
+  .img-box {
+    left: 50%;
+  }
+  .img-box {
+    top: 10%;
+    left: 20%;
+  }
+
+  .img-bg {
+    transform: translateX(-100px);
+    width: 100%;
+  }
+
+  /* Right Side */
+  .card-right {
+    transform: translateY(-20px);
+    padding: 0px 20px 20px 20px;
+  }
+  .card-right .card-title {
+    text-align: center;
+  }
+  .card-right .card-question h2 {
+    font-size: 14px;
+  }
+  .card-right .card-answer {
+    font-size: 12px;
+  }
+}
